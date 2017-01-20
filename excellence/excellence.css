@@ -1,0 +1,54 @@
+h1, p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: italic;
+}
+
+h1 {
+	font-size: 36pt;
+}
+
+p {
+	font-size: 12pt;
+}
+
+body {
+	background-color: rgb(255,204,0);
+}
+
+img {
+	margin-top: 25px;
+	font-size: 21px;
+	text-align: center;
+
+	-webkit-animation: fadein 4s;
+	   -moz-animation: fadein 4s;
+		-ms-animation: fadein 4s;
+		 -o-animation: fadein 4s;
+			animation: fadein 4s;
+}
+
+@keyframes fadein {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
+
+@-ms-keyframes fadein {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
+
+@-o-keyframes fadein {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
