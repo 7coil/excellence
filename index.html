@@ -12,15 +12,22 @@
 		<div align="center">
 			<img src="chef_excellence.png" id="image">
 			<h1>'An excellent <span id="message">website</span>'</h1>
-			<form method="get">
-				<p>Input Excellence: </p><input type="text" name="input"><br><br>
-				<input type="submit" value="Submit">
-			</form>
+			<p>Input Excellence: </p><input type="text" name="input" id="input"><br><br>
+			<button onclick="reload()">Submit</button>
 		</div>
 		<script>
-			const message = document.getElementById('message');
-			let text = (/\?input=(.+)/g).exec(window.location.search);
-			if (text[1]) message.innerHTML = decodeURIComponent(text[1])
+			const inputBox = document.getElementById('input');
+			const reload = () => {
+				window.location.href = window.location.pathname + '#' + encodeURIComponent(inputBox.value);
+				window.location.reload();
+			}
+
+			inputBox.addEventListener('keyup', (e) => {
+				if (e.key === 'Enter') {
+					reload();
+				}
+			});
+			if (window.location.hash) message.innerHTML = decodeURIComponent(window.location.hash.substring(1));
 		</script>
 	</body>
 </html>
