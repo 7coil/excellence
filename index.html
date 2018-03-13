@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="excellence.css">
+		<audio autoplay>
+		  <source src="chef_excellence_jingle.mp3" type="audio/mpeg">
+		  Your web browser does not support mp3 files.
+		</audio>
+	</head>
+	<body>
+		<div align="center">
+			<img src="chef_excellence.png" id="image">
+			<h1>'An excellent <span id="message">website</span>'</h1>
+			<form method="get">
+				<p>Input Excellence: </p><input type="text" name="input"><br><br>
+				<input type="submit" value="Submit">
+			</form>
+		</div>
+		<script>
+			const message = document.getElementById('message');
+			let text = (/\?input=(.+)/g).exec(window.location.search);
+			if (text[1]) message.innerHTML = decodeURIComponent(text[1])
+		</script>
+	</body>
+</html>
