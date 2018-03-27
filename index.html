@@ -21,13 +21,18 @@
 				window.location.href = window.location.pathname + '#' + encodeURIComponent(inputBox.value);
 				window.location.reload();
 			}
+			const escape = text => text.replace(/&/g, "&amp;")
+				.replace(/</g, "&lt;")
+				.replace(/>/g, "&gt;")
+				.replace(/"/g, "&quot;")
+				.replace(/'/g, "&#039;")
 
 			inputBox.addEventListener('keyup', (e) => {
 				if (e.key === 'Enter') {
 					reload();
 				}
 			});
-			if (window.location.hash) message.innerHTML = decodeURIComponent(window.location.hash.substring(1));
+			if (window.location.hash) message.innerHTML = escape(decodeURIComponent(window.location.hash.substring(1)));
 		</script>
 	</body>
 </html>
